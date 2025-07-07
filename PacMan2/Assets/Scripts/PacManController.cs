@@ -7,10 +7,12 @@ public class PacManController : MonoBehaviour
     [SerializeField] private float wallCheckCircleRadius = 0.25f;
 
     [SerializeField] private GameObject spriteContainer;
+    [SerializeField] private Animator animator;
 
     private Vector2 desiredDirection;
     private Vector2 direction;
     private Rigidbody2D rb;
+    private float defaultAnimatorSpeed;
 
     /*
     * Start: Runs at the first frame this object is active
@@ -19,10 +21,14 @@ public class PacManController : MonoBehaviour
     {
         // Get components
         rb = GetComponent<Rigidbody2D>();
+        animator = spriteContainer.GetComponentInChildren<Animator>();
 
         // Setup direction
         direction = Vector2.right;
         desiredDirection = Vector2.right;
+
+        // Misc
+        defaultAnimatorSpeed = animator.speed;
     }
 
     /*
@@ -32,10 +38,18 @@ public class PacManController : MonoBehaviour
     {
         // Get and maybe apply the desired direction
         GetDesiredDirection();
-        if (!CheckWallAt(desiredDirection, wallCheckDistance))
+        if (CheckWallAt(desiredDirection, wallCheckDistance))
         {
-            //Debug.Log("Changes direction!");
+            // Pause animation if we do not want to go in a different direction
+            if (direction == desiredDirection)
+            {
+                animator.speed = 0;
+            }
+        }
+        else
+        {
             direction = desiredDirection;
+            animator.speed = defaultAnimatorSpeed;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             spriteContainer.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
