@@ -203,11 +203,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1839735485 &1228047791 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 7560557214512688284, guid: 90ef66be61fa7bf4c8886b610cdd09e1, type: 3}
-  m_PrefabInstance: {fileID: 6616936963068392213}
-  m_PrefabAsset: {fileID: 0}
 --- !u!156049354 &1314532540 stripped
 Grid:
   m_CorrespondingSourceObject: {fileID: 3752981226822455856, guid: 90ef66be61fa7bf4c8886b610cdd09e1, type: 3}
@@ -280,11 +275,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3289204834515131930, guid: f8bd8fa242d904f44af56d8e1cbe0b2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3289204834515131930, guid: f8bd8fa242d904f44af56d8e1cbe0b2a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.75000006
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993985895104235014, guid: f8bd8fa242d904f44af56d8e1cbe0b2a, type: 3}
       propertyPath: m_Name
@@ -445,9 +440,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1314532540}
     - target: {fileID: 3838307643565273567, guid: dd93990e9f14ab4438f2e32fdd7d3171, type: 3}
-      propertyPath: pelletsTilemap
-      value: 
-      objectReference: {fileID: 1228047791}
+      propertyPath: wallCheckCircleRadius
+      value: 0.235
+      objectReference: {fileID: 0}
     - target: {fileID: 6489122569711850727, guid: dd93990e9f14ab4438f2e32fdd7d3171, type: 3}
       propertyPath: m_Name
       value: PacMan
