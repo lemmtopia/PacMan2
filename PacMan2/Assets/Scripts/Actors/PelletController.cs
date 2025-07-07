@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class PelletController : MonoBehaviour
 {
-    [SerializeField] private int points = 10;
+    [SerializeField] protected int points = 10;
+
+    /*
+     * Eat: Add points (power up PacMan if PowerPellet)
+     */
+    protected virtual void Eat()
+    {
+        GameController.Instance.AddScore(points);
+    }
 
     /*
      * OnTriggerEnter2D(Collider2D collision): Get collisions with triggers (collisions that do not affect our physics state, only trigger events)
@@ -12,6 +20,7 @@ public class PelletController : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("PacMan"))
         {
             // Pellet collision
+            Eat();
             Destroy(gameObject);
         }
     }
