@@ -11,6 +11,8 @@ public class PacManController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Grid grid;
     [SerializeField] private Tilemap pelletsTilemap;
+    
+    Vector2 startingDirection;
 
     private Vector2 desiredDirection;
     private Vector2 direction;
@@ -26,8 +28,10 @@ public class PacManController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = spriteContainer.GetComponentInChildren<Animator>();
 
+        startingDirection = Vector2.right;
+
         // Setup direction
-        direction = Vector2.right;
+        direction = startingDirection;
         desiredDirection = Vector2.right;
 
         // Misc
@@ -61,6 +65,15 @@ public class PacManController : MonoBehaviour
         // Apply movement vector
         Vector2 movementVector = direction * moveSpeed;
         rb.linearVelocity = movementVector;
+    }
+
+    /*
+     * ResetPositionAndDirection: Resets position and direction
+     */
+    public void ResetPositionAndDirection()
+    {
+        transform.position = new Vector3(0, -0.5f, 0); 
+        direction = startingDirection;
     }
 
     /*

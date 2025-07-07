@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 9185798799316338213}
   m_Layer: 6
   m_Name: PacMan
-  m_TagString: Player
+  m_TagString: PacMan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -21,7 +21,7 @@ public class PelletController : MonoBehaviour
         {
             // Pellet collision
             Eat();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,10 +31,28 @@ public class GameController : MonoBehaviour
     /*
      * NewGame: Resets score and lives
      */
-    void NewGame()
+    public void NewGame()
     {
         score = 0;
         lives = startingLives;
+        NewRound();
+    }
+
+    public void NewRound()
+    {
+        PelletController[] pellets = GameObject.FindObjectsByType<PelletController>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (PelletController pellet in pellets)
+        {
+            pellet.gameObject.SetActive(true);
+        }
+
+        PacManController pacman = GameObject.FindGameObjectWithTag("PacMan").GetComponent<PacManController>();
+        if (pacman)
+        {
+            Debug.Log("PacMan found");
+        }
+        pacman.gameObject.SetActive(true);
+        pacman.ResetPositionAndDirection();
     }
 
     public int GetLives()
@@ -64,5 +83,13 @@ public class GameController : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            NewGame();
+        }
     }
 }
