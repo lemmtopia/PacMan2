@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PacManController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PacManController : MonoBehaviour
 
     [SerializeField] private GameObject spriteContainer;
     [SerializeField] private Animator animator;
+    [SerializeField] private Grid grid;
+    [SerializeField] private Tilemap pelletsTilemap;
 
     private Vector2 desiredDirection;
     private Vector2 direction;
@@ -59,6 +62,18 @@ public class PacManController : MonoBehaviour
         Vector2 movementVector = direction * moveSpeed;
         rb.linearVelocity = movementVector;
     }
+
+    /*
+     * OnTriggerEnter2D(Collider2D collision): Get collisions with triggers (collisions that do not affect our physics state, only trigger events)
+     */
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Pellets")
+    //    {
+    //        // Pellet collision
+    //        Destroy(collision.gameObject);
+    //    }
+    //}
 
     /*
      * GetDesiredDirection: Gets the input direction (Will not apply it yet!)

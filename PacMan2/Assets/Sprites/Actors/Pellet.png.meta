@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0d2099880ac351141a2fc6d1858d9d42
+guid: e53c6e238f89ce4438179ab9382ea36b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1323070409747499033
-    second: PacStage_0
+      213: -8357494700477734146
+    second: Pellet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PacStage_0
+      name: Pellet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 224
-        height: 248
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e77b26e87283ade0800000000000000
-      internalID: -1323070409747499033
+      spriteID: ef2a0dd89d6340c80800000000000000
+      internalID: -8357494700477734146
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PacStage_0: -1323070409747499033
+      Pellet_0: -8357494700477734146
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
