@@ -10,7 +10,6 @@ public class PacManController : MonoBehaviour
     [SerializeField] private GameObject spriteContainer;
     [SerializeField] private Animator animator;
     [SerializeField] private Grid grid;
-    [SerializeField] private Tilemap pelletsTilemap;
     
     Vector2 startingDirection;
 
@@ -28,9 +27,9 @@ public class PacManController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = spriteContainer.GetComponentInChildren<Animator>();
 
+        // Setup direction
         startingDirection = Vector2.right;
 
-        // Setup direction
         direction = startingDirection;
         desiredDirection = Vector2.right;
 
@@ -61,7 +60,9 @@ public class PacManController : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             spriteContainer.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
-
+    }
+    private void FixedUpdate()
+    {
         // Apply movement vector
         Vector2 movementVector = direction * moveSpeed;
         rb.linearVelocity = movementVector;

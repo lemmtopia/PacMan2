@@ -452,10 +452,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PacMan
       objectReference: {fileID: 0}
-    - target: {fileID: 6489122569711850727, guid: dd93990e9f14ab4438f2e32fdd7d3171, type: 3}
-      propertyPath: m_TagString
-      value: PacMan
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
