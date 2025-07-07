@@ -211,6 +211,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3289204834515131930, guid: f8bd8fa242d904f44af56d8e1cbe0b2a, type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3289204834515131930, guid: f8bd8fa242d904f44af56d8e1cbe0b2a, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6993985895104235014, guid: f8bd8fa242d904f44af56d8e1cbe0b2a, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -312,14 +320,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8342094761380800465, guid: 90ef66be61fa7bf4c8886b610cdd09e1, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8342094761380800465, guid: 90ef66be61fa7bf4c8886b610cdd09e1, type: 3}
-      propertyPath: m_TagString
-      value: Walls
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -373,10 +373,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6311413045907914880, guid: dd93990e9f14ab4438f2e32fdd7d3171, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 6e71fa6c1adb22945b096feaad187ba1, type: 2}
     - target: {fileID: 6489122569711850727, guid: dd93990e9f14ab4438f2e32fdd7d3171, type: 3}
       propertyPath: m_Name
       value: PacMan

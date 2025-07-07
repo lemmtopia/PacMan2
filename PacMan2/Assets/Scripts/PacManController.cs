@@ -4,7 +4,9 @@ public class PacManController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2.5f;
     [SerializeField] private float wallCheckDistance = 0.25f;
-    [SerializeField] private float wallCheckBoxSideLength;
+    [SerializeField] private float wallCheckCircleRadius = 0.25f;
+
+    [SerializeField] private GameObject spriteContainer;
 
     private Vector2 desiredDirection;
     private Vector2 direction;
@@ -32,8 +34,11 @@ public class PacManController : MonoBehaviour
         GetDesiredDirection();
         if (!CheckWallAt(desiredDirection, wallCheckDistance))
         {
-            Debug.Log("Changes direction!");
+            //Debug.Log("Changes direction!");
             direction = desiredDirection;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            spriteContainer.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         }
 
         // Apply movement vector
@@ -56,22 +61,22 @@ public class PacManController : MonoBehaviour
         if (keyRight)
         {
             desiredDirection = Vector2.right;
-            Debug.Log("Desired direction: Right!");
+            //Debug.Log("Desired direction: Right!");
         }
         else if (keyLeft)
         {
             desiredDirection = Vector2.left;
-            Debug.Log("Desired direction: Left!");
+            //Debug.Log("Desired direction: Left!");
         }
         else if (keyUp)
         {
             desiredDirection = Vector2.up;
-            Debug.Log("Desired direction: Up!");
+            //Debug.Log("Desired direction: Up!");
         }
         else if (keyDown)
         {
             desiredDirection = Vector2.down;
-            Debug.Log("Desired direction: Down");
+            //Debug.Log("Desired direction: Down");
         }
     }
 
@@ -80,11 +85,9 @@ public class PacManController : MonoBehaviour
      */
     public bool CheckWallAt(Vector2 direction, float distance)
     {
-        Vector2 boxSize = new Vector2(wallCheckBoxSideLength, wallCheckBoxSideLength);
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, boxSize, 0, direction, distance, LayerMask.GetMask("Walls"));
+        RaycastHit2D hit = Physics2D.CircleCast(transform.position, wallCheckCircleRadius, direction, distance, LayerMask.GetMask("Walls"));
         if (hit)
-        { 
-            Debug.Log(hit.point);
+        {
             return true;
         }
 
