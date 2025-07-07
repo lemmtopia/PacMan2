@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2806034235918850893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpriteContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6311413045907914880}
   - component: {fileID: 3838307643565273567}
   - component: {fileID: 9185798799316338213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PacMan
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 1872125133542704138}
   - component: {fileID: 6532967424916422319}
   - component: {fileID: 4640518421040664004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PacManEat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -64,18 +64,6 @@ public class PacManController : MonoBehaviour
     }
 
     /*
-     * OnTriggerEnter2D(Collider2D collision): Get collisions with triggers (collisions that do not affect our physics state, only trigger events)
-     */
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Pellets")
-    //    {
-    //        // Pellet collision
-    //        Destroy(collision.gameObject);
-    //    }
-    //}
-
-    /*
      * GetDesiredDirection: Gets the input direction (Will not apply it yet!)
      */
     private void GetDesiredDirection()
